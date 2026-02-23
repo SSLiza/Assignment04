@@ -144,7 +144,7 @@ function renderThriving() {
     <div class="space-y-6">
                     <!-- part1 -->
                     <div>
-                        <h1 class="companyName text-2xl font-semibold">${interview.companyName}/h1>
+                        <h1 class="companyName text-2xl font-semibold">${interview.companyName}</h1>
                     <p class="jobRole text-gray-500">React Native Developer</p>
                     
                     </div>
@@ -194,7 +194,7 @@ function renderStruggling(){
     <div class="space-y-6">
                     <!-- part1 -->
                     <div>
-                        <h1 class="companyName text-2xl font-semibold">${rejected.companyName}/h1>
+                        <h1 class="companyName text-2xl font-semibold">${rejected.companyName}</h1>
                     <p class="jobRole text-gray-500">React Native Developer</p>
                     
                     </div>
