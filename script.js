@@ -212,39 +212,40 @@ function renderInterview() {
         let div = document.createElement('div');
         div.className = 'card flex justify-between gap-8 p-8 bg-white'
         div.innerHTML = `
-    <div class="space-y-6">
-                    <!-- part1 -->
-                    <div>
-                        <h1 class="companyName text-2xl font-semibold">${interview.companyName}</h1>
-                    <p class="jobRole text-gray-500">React Native Developer</p>
-                    
+        <div class="card flex justify-between bg-white rounded-xl p-6">
+                    <div class="space-y-6">
+                        <!-- part1 -->
+                        <div>
+                            <h1 class="companyName text-2xl font-semibold">${interview.companyName}</h1>
+                            <p class="jobRole text-gray-500">${interview.jobRole}</p>
+
+                        </div>
+                        <div>
+                            <p class="jobDetails text-gray-500">${interview.details}</p>
+                        </div>
+                        <!-- status part -->
+                        <div>
+                            <p class="status bg-[#EEF4FF] text-[#002C5C] p-3 w-35 rounded-xl">${interview.status}</p>
+                        </div>
+                        <!-- part3 -->
+                        <div>
+                            <p class="description text-gray-500">${interview.description}</p>
+                        </div>
+                        <!-- button part -->
+                        <div class="flex gap-5 ">
+                            <button
+                                class="interview-btn px-4 py-1.5 text-sm font-semibold tracking-wide uppercase border rounded-md border-emerald-500 text-emerald-500 bg-white">Interview</button>
+                            <button
+                                class="rejected-btn px-4 py-1.5 text-sm font-semibold tracking-wide uppercase border rounded-md border-rose-400 text-rose-400 bg-white">REJECTED</button>
+                        </div>
+
+
                     </div>
-                    <div>
-                        <p class="jobDetails text-gray-500">Remote
-                        •
-                        Full-time
-                        •
-                        $130,000 - $175,000</p>
+                    <!-- delete part -->
+                    <div class="flex items-start">
+                        <button class="btn-delete border border-gray-500 rounded-full p-3 shrink-0 mr-2"><img src="./assets/Trash.png"
+                                alt=""></button>
                     </div>
-                    <!-- status part -->
-                    <div class="status">
-                        <p class="status bg-[#EEF4FF] text-black p-3 w-35 rounded-xl font-bold">${interview.status}</p>
-                    </div>
-                    <!-- part3 -->
-                    <div>
-                        <p class="description text-gray-500">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
-                    </div>
-                    <!-- button part -->
-                     <div class="flex gap-5 ">
-                        <button class="interview-btn px-4 py-1.5 text-sm font-semibold tracking-wide uppercase border rounded-md border-emerald-500 text-emerald-500 bg-white">Interview</button>
-                        <button class="rejected-btn px-4 py-1.5 text-sm font-semibold tracking-wide uppercase border rounded-md border-rose-400 text-rose-400 bg-white">REJECTED</button>
-                     </div>
-                     
-                      
-                </div>
-                <!-- delete part -->
-                <div>
-                    <button class="btn-delete border border-gray-500 rounded-full p-3"><img src="./assets/Trash.png" alt=""></button>
                 </div>
     `
         filterSection.appendChild(div)
