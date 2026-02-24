@@ -17,10 +17,22 @@ const mainContainer = document.querySelector('main')
 const filterSection = document.getElementById('filtered-section')
 
 function calculateCount() {
-    total.innerText = allCardSection.children.length //8
-    total1.innerText = allCardSection.children.length //8
-    interviewCount.innerText = interviewList.length
-    rejectedCount.innerText = rejectedList.length
+
+    const totalJobs = allCardSection.children.length;
+
+    total.innerText = totalJobs;
+    interviewCount.innerText = interviewList.length;
+    rejectedCount.innerText = rejectedList.length;
+    
+    if (currentStatus === 'interview-filter-btn') {
+        total1.innerText = `${interviewList.length} of ${totalJobs}`;
+    } 
+    else if (currentStatus === 'rejected-filter-btn') {
+        total1.innerText = `${rejectedList.length} of ${totalJobs}`;
+    } 
+    else {
+        total1.innerText = totalJobs;
+    }
 }
 
 calculateCount();
@@ -56,6 +68,8 @@ function toggleStyle(id) {
         filterSection.classList.remove('hidden')
         renderRejected()
     }
+
+    calculateCount();
 
 }
 
@@ -174,6 +188,17 @@ mainContainer.addEventListener('click', function (event) {
 function renderInterview() {
     filterSection.innerHTML = ''
 
+          // If no interview jobs
+    if (interviewList.length === 0) {
+        filterSection.innerHTML = `
+            <div class="text-center py-10">
+                <img src="./assets/jobs.png" class="mx-auto w-40 mb-5" />
+                <p class="text-gray-500 text-xl font-semibold">No Job Available</p>
+            </div>
+        `
+        return;
+    }
+
 
     for (let interview of interviewList) {
         console.log(interview);
@@ -223,6 +248,19 @@ function renderInterview() {
 function renderRejected(){
 
     filterSection.innerHTML = ''
+
+
+        // If no rejected jobs
+    if (rejectedList.length === 0) {
+        filterSection.innerHTML = `
+            <div class="text-center py-10">
+                <img src="./assets/jobs.png" class="mx-auto w-40 mb-5" />
+                <p class="text-gray-500 text-xl font-semibold">No Job Available</p>
+            </div>
+        `
+        return;
+    }
+
 
     for(let rejected of rejectedList){
 
